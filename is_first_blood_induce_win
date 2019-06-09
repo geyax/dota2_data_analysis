@@ -1,0 +1,9 @@
+def is_first_blood_induce_win(match_info):
+    if 'radiant_win' not in match_info or match_info['objectives'] == None:
+        return None
+    else:
+        win_camp = 'radiant' if match_info['radiant_win'] is True else 'dire'
+        for objects in match_info['objectives']:
+            if objects['type'] == 'CHAT_MESSAGE_FIRSTBLOOD':
+                player_slot = objects['player_slot']
+                
